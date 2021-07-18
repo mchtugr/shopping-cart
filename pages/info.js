@@ -3,7 +3,7 @@ const InfoPage = () => {
   return (
     <div>
       <Header />
-      <div className='info-container center'>
+      <div className='info-container center text-center'>
         <div className='info center rounded'>
           This project covers only shopping-cart screen.
         </div>
