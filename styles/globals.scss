@@ -1,0 +1,241 @@
+@import './bootswatch/variables';
+@import './bootstrap-scss/bootstrap.scss';
+@import './bootswatch/bootswatch';
+
+// VARIABLES
+$bold: 500;
+$whitish: #eee;
+$blackish: #1a1a1a;
+$circle: 50%;
+$box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$solid-border: 1px solid;
+
+//
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}
+
+footer {
+  font-size: 12px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-btn {
+  background-color: $whitish;
+  border: $solid-border $whitish;
+}
+
+.custom-btn:hover {
+  opacity: 0.7;
+}
+
+.text-left {
+  font-weight: $bold;
+}
+
+label {
+  font-weight: $bold;
+}
+// CARTICON
+
+.cart-icon-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: $circle;
+  color: rgba($color: $blackish, $alpha: 0.3);
+}
+
+.cart-icon-container:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: $blackish;
+}
+
+.cart-icon-num {
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: $circle;
+  font-weight: 500;
+  position: absolute;
+  color: $blackish;
+}
+
+//CART SUMMARY
+
+.cart-summary-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+//HEADER
+
+.navbar {
+  padding: 0;
+  z-index: 1;
+}
+
+.cart {
+  color: rgba(250, 156, 156, 0.5);
+  padding: 0;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .logo-container {
+    margin-left: 20px;
+  }
+
+  .cart {
+    position: absolute;
+    right: 60px;
+    top: 5px;
+    margin-right: 15px;
+  }
+
+  .toggle {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+
+  .toggle-items {
+    margin-left: 20px;
+  }
+}
+
+.sliding-cart {
+  text-align: center;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  width: 400px;
+  min-height: 15vh;
+  max-height: 40vh;
+  overflow: auto;
+  z-index: 999;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transform: translateX(500px);
+  transition: transform 1.1s ease-out;
+}
+
+@media screen and (max-width: 575px) {
+  .sliding-cart {
+    width: 100%;
+  }
+}
+
+.cart:hover .sliding-cart {
+  transform: translateX(0);
+}
+
+// PRODUCT CARD
+
+.product-card {
+  border: $solid-border $gray-200;
+  padding: 20px;
+}
+.product-card:hover {
+  box-shadow: $box-shadow;
+  border: $solid-border $gray-400;
+  border-radius: 5px;
+}
+
+.btn-container {
+  position: relative;
+}
+.product-card:hover .card-btn {
+  visibility: visible;
+}
+.card-btn {
+  position: absolute;
+  visibility: hidden;
+  bottom: 40px;
+}
+.product-title-home {
+  text-transform: uppercase;
+  font-weight: $bold;
+}
+// CART PRODUCTS
+
+.delete-btn-container {
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  padding: 3px;
+}
+
+.product-title {
+  text-transform: capitalize;
+  font-weight: $bold;
+}
+//SHIPPING DETAIL
+
+.shipping-detail-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container {
+  height: 80vh;
+}
+
+.info {
+  height: 40vh;
+  width: 500px;
+  background-color: $whitish;
+}
+
+@media screen and (max-width: 575px) {
+  .info {
+    width: 100vw;
+  }
+}
+
+.demo:hover {
+  font-size: 30px;
+}
